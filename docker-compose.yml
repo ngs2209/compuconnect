@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    ports:
+      - "4173:4173"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev -- --host 0.0.0.0 --port 4173
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    working_dir: /usr/src/app
+    stdin_open: true
+    tty: true
