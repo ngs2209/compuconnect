@@ -52,7 +52,6 @@ export default function NetworkDiagram() {
         {/* connection lines + travelling packets */}
         {serviceNodes.map((node, i) => {
           const p = nodePosition(i, serviceNodes.length);
-          const Icon = serviceIcons[node.id as keyof typeof serviceIcons];
 
           return (
             <g key={node.id}>
