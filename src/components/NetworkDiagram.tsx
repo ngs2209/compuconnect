@@ -1,9 +1,18 @@
 import { motion } from "framer-motion";
 import { serviceNodes } from "../data/content";
+import { Shield, Laptop, Wrench, Camera, Network, Home } from "lucide-react";
 
 // Fixed positions around a circle for 5 service nodes, centre = COMPU CONNECT
 const RADIUS = 190;
 const CENTER = { x: 260, y: 260 };
+
+const serviceIcons = {
+  sales: Laptop,
+  service: Wrench,
+  cctv: Camera,
+  networking: Network,
+  automation: Home,
+};
 
 function nodePosition(index: number, total: number) {
   const angle = (index / total) * Math.PI * 2 - Math.PI / 2;
@@ -15,7 +24,10 @@ function nodePosition(index: number, total: number) {
 
 export default function NetworkDiagram() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[520px]" aria-hidden="true">
+    <div
+      className="relative mx-auto aspect-square w-full max-w-[520px]"
+      aria-hidden="true"
+    >
       <svg viewBox="0 0 520 520" className="h-full w-full overflow-visible">
         <defs>
           <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
@@ -26,12 +38,22 @@ export default function NetworkDiagram() {
 
         {/* faint concentric rings */}
         {[120, 160, 200].map((r) => (
-          <circle key={r} cx={CENTER.x} cy={CENTER.y} r={r} stroke="#242c40" strokeWidth="1" fill="none" />
+          <circle
+            key={r}
+            cx={CENTER.x}
+            cy={CENTER.y}
+            r={r}
+            stroke="#242c40"
+            strokeWidth="1"
+            fill="none"
+          />
         ))}
 
         {/* connection lines + travelling packets */}
         {serviceNodes.map((node, i) => {
           const p = nodePosition(i, serviceNodes.length);
+          const Icon = serviceIcons[node.id as keyof typeof serviceIcons];
+
           return (
             <g key={node.id}>
               <line
@@ -42,11 +64,20 @@ export default function NetworkDiagram() {
                 stroke="#242c40"
                 strokeWidth="1.5"
               />
+
               <motion.circle
                 r="3.5"
                 fill="#29d6c8"
-                initial={{ cx: CENTER.x, cy: CENTER.y, opacity: 0 }}
-                animate={{ cx: [CENTER.x, p.x], cy: [CENTER.y, p.y], opacity: [0, 1, 0] }}
+                initial={{
+                  cx: CENTER.x,
+                  cy: CENTER.y,
+                  opacity: 0,
+                }}
+                animate={{
+                  cx: [CENTER.x, p.x],
+                  cy: [CENTER.y, p.y],
+                  opacity: [0, 1, 0],
+                }}
                 transition={{
                   duration: 2.4,
                   repeat: Infinity,
@@ -58,8 +89,10 @@ export default function NetworkDiagram() {
           );
         })}
 
-        {/* core */}
+        {/* center glow */}
         <circle cx={CENTER.x} cy={CENTER.y} r="90" fill="url(#coreGlow)" />
+
+        {/* center circle */}
         <motion.circle
           cx={CENTER.x}
           cy={CENTER.y}
@@ -67,12 +100,32 @@ export default function NetworkDiagram() {
           fill="#10151f"
           stroke="#4c6fff"
           strokeWidth="1.5"
-          animate={{ r: [46, 49, 46] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          animate={{
+            r: [46, 49, 46],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         />
+
+        {/* center icon */}
+        <foreignObject
+          x={CENTER.x - 18}
+          y={CENTER.y - 38}
+          width="36"
+          height="36"
+        >
+          <div className="flex h-full w-full items-center justify-center">
+            <Shield size={30} color="#29d6c8" strokeWidth={2} />
+          </div>
+        </foreignObject>
+
+        {/* center text */}
         <text
           x={CENTER.x}
-          y={CENTER.y - 4}
+          y={CENTER.y + 18}
           textAnchor="middle"
           className="font-display"
           fill="#e9ecf4"
@@ -81,9 +134,10 @@ export default function NetworkDiagram() {
         >
           COMPU
         </text>
+
         <text
           x={CENTER.x}
-          y={CENTER.y + 14}
+          y={CENTER.y + 34}
           textAnchor="middle"
           className="font-display"
           fill="#e9ecf4"
@@ -96,6 +150,7 @@ export default function NetworkDiagram() {
         {/* service nodes */}
         {serviceNodes.map((node, i) => {
           const p = nodePosition(i, serviceNodes.length);
+          const Icon = serviceIcons[node.id as keyof typeof serviceIcons];
           return (
             <g key={node.id}>
               <motion.circle
@@ -105,13 +160,34 @@ export default function NetworkDiagram() {
                 fill="#161d2c"
                 stroke="#242c40"
                 strokeWidth="1"
-                initial={{ scale: 0.9 }}
-                animate={{ scale: [0.95, 1, 0.95] }}
-                transition={{ duration: 3.2, repeat: Infinity, delay: i * 0.2 }}
+                initial={{
+                  scale: 0.9,
+                }}
+                animate={{
+                  scale: [0.95, 1, 0.95],
+                }}
+                transition={{
+                  duration: 3.2,
+                  repeat: Infinity,
+                  delay: i * 0.2,
+                }}
               />
+
               <foreignObject x={p.x - 44} y={p.y + 34} width="88" height="34">
-                <div className="text-center font-mono text-[9px] leading-tight text-muted" style={{ color: "#8c95ab" }}>
+                <div
+                  className="text-center font-mono text-[9px] leading-tight"
+                  style={{
+                    color: "#8c95ab",
+                  }}
+                >
+                   
                   {node.label}
+                </div>                
+              </foreignObject>
+
+              <foreignObject x={p.x - 15} y={p.y - 15} width="30" height="30">
+                <div className="flex h-full w-full items-center justify-center">
+                  <Icon size={22} color="#29d6c8" strokeWidth={2} />
                 </div>
               </foreignObject>
             </g>

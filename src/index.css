@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+/*@theme {
   --font-display: "Space Grotesk", "Inter", sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -24,7 +24,72 @@
   --color-signal: #29d6c8;
   --color-whatsapp: #25d366;
 }
+@theme {
+   
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
+   
+  --color-ink: #FFFFFF;
+  --color-surface: #F8FAFC;
+  --color-surface-2: #F1F5F9;
+  --color-surface-3: #E2E8F0;
+
+   
+  --color-line: #E5E7EB;
+
+   
+  --color-text: #111827;
+  --color-muted: #4B5563;
+  --color-muted-2: #6B7280;
+
+   
+  --color-primary: #1D4ED8;       
+  --color-primary-2: #2563EB;     
+  --color-primary-dim: #DBEAFE;   
+
+   
+  --color-accent: #D4AF37;       
+  --color-accent-2: #F4D03F;      
+
+   
+  --color-signal: #0EA5A4;        
+  --color-whatsapp: #25D366;
+}*/
+@theme {
+  /* Fonts */
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Backgrounds */
+  --color-ink: #FFFFFF;
+  --color-surface: #F8FAFC;
+  --color-surface-2: #F1F5F9;
+  --color-surface-3: #E2E8F0;
+
+  /* Borders */
+  --color-line: #E5E7EB;
+
+  /* Text */
+  --color-text: #1F2937;
+  --color-muted: #4B5563;
+  --color-muted-2: #6B7280;
+
+  /* Brand (Deep Teal) */
+  --color-primary: #0F766E;
+  --color-primary-2: #14B8A6;
+  --color-primary-dim: #CCFBF1;
+
+  /* Premium Bronze */
+  --color-accent: #B45309;
+  --color-accent-2: #D97706;
+
+  /* Status */
+  --color-signal: #10B981;
+  --color-whatsapp: #25D366;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -75,7 +140,7 @@ body {
 }
 
 .glass {
-  background: rgba(16, 21, 31, 0.6);
+  background: rgba(238, 239, 241, 0.6);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(140, 149, 171, 0.12);
