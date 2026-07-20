@@ -13,7 +13,7 @@ const slides = [
     body: "Sales, installation and support for the systems your business runs on — from a single laptop to a full server room.",
   },
   {
-    eyebrow: "Computer & Laptop Sales",
+    eyebrow: "Computer, Laptop Sales & Service",
     title: "Business PCs to gaming workstations",
     body: "Configured, tested and delivered — premium brands, priced fairly, backed by local support.",
   },

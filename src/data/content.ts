@@ -2,10 +2,10 @@ import computerImage from "../assets/product-computer.svg";
 import laptopImage from "../assets/product-laptop.svg";
 import printerImage from "../assets/product-printer.svg";
 import cctvImage from "../assets/product-cctv.svg";
-import networkingImage from "../assets/product-networking.svg";
+import smartHomeImage from "../assets/product-networking.svg";
 import upsImage from "../assets/product-ups.svg";
-import serverImage from "../assets/product-server.svg";
-import componentsImage from "../assets/product-components.svg";
+/*import serverImage from "../assets/product-server.svg";
+import componentsImage from "../assets/product-components.svg";*/
 
 export const company = {
   name: "COMPU CONNECT",
@@ -13,7 +13,7 @@ export const company = {
   addressLines: ["Negamam Road, Kovilpalayam", "Pollachi, Tamil Nadu, India"],
   phones: ["+91 99945 14485", "+91 98434 60780"],
   whatsapp: "919994514485",
-  email: "info@compuconnect.in",
+  email: "compuconnect.poy@gmail.com",
   hours: "Mon – Sat, 9:30 AM – 8:00 PM",
   mapEmbed:
     "https://www.google.com/maps?q=Kovilpalayam,Pollachi,Tamil+Nadu&output=embed",
@@ -39,19 +39,29 @@ export type ServiceNode = {
 export const serviceNodes: ServiceNode[] = [
   {
     id: "sales",
-    label: "Computer & Laptop Sales",
-    short: "Business PCs, gaming rigs & workstations",
+    label: "Computer, Laptop Sales & Service",
+    short: "Business PCs, assembled desktops & accessories",
     description:
-      "New and upgraded desktops, laptops and workstations sourced from authorised distributors, configured for your workload before they leave our counter.",
-    bullets: ["Business PCs", "Gaming PCs", "Workstations", "Premium brands"],
+      "New desktops, laptops, assembled desktop PCs, and computer accessories sourced from authorised distributors, configured to meet your requirements before delivery.",
+    bullets: [
+      "Business PCs",
+      "Assembled desktops",
+      "Computer accessories",
+      "Premium brands",
+    ],
   },
   {
     id: "service",
-    label: "Repair & AMC",
-    short: "Diagnostics, repair and annual maintenance",
+    label: "UPS & Battery",
+    short: "UPS installation, battery replacement and power backup solutions",
     description:
-      "In-shop and on-site diagnostics for hardware and software faults, backed by Annual Maintenance Contracts that keep offices running without surprise downtime.",
-    bullets: ["Hardware repair", "OS & software support", "Data recovery", "AMC plans"],
+      "Reliable UPS installation, battery replacement, maintenance, and power backup solutions for homes and businesses, ensuring uninterrupted operations during power outages.",
+    bullets: [
+      "UPS installation",
+      "Battery replacement",
+      "UPS maintenance",
+      "Power backup solutions",
+    ],
   },
   {
     id: "cctv",
@@ -59,7 +69,7 @@ export const serviceNodes: ServiceNode[] = [
     short: "AI surveillance with remote monitoring",
     description:
       "Camera surveys, installation and configuration for homes, shops and factories, with remote viewing set up on your phone before we leave site.",
-    bullets: ["AI surveillance", "Remote monitoring", "Installation", "AMC"],
+    bullets: ["AI surveillance", "Remote monitoring", "Installation"],
   },
   {
     id: "networking",
@@ -67,7 +77,12 @@ export const serviceNodes: ServiceNode[] = [
     short: "Enterprise WiFi, firewalls & server rooms",
     description:
       "Structured cabling, enterprise WiFi, firewall configuration and server setup for growing offices that need a network they can trust.",
-    bullets: ["Enterprise WiFi", "Firewall", "Server setup", "Cloud integration"],
+    bullets: [
+      "Enterprise WiFi",
+      "Firewall",
+      "Server setup",
+      "Cloud integration",
+    ],
   },
   {
     id: "automation",
@@ -76,6 +91,19 @@ export const serviceNodes: ServiceNode[] = [
     description:
       "Biometric attendance, smart access control and connected automation that brings your home or office up to date, wired in cleanly by our own team.",
     bullets: ["IoT", "Smart security", "Biometric", "Access control"],
+  },
+  {
+    id: "automation",
+    label: "UPS & Batteries",
+    short: "Reliable power backup solutions for home & business",
+    description:
+      "We supply, install, and maintain UPS systems and batteries for homes, offices, and businesses, ensuring uninterrupted power and dependable backup during outages.",
+    bullets: [
+      "UPS sales",
+      "Battery replacement",
+      "UPS installation",
+      "Maintenance & support",
+    ],
   },
 ];
 
@@ -93,127 +121,152 @@ export const products: Product[] = [
   {
     id: "business-desktop",
     category: "Desktop",
-    name: "Business Desktop PC",
-    specs: ["Intel Core i5 / Ryzen 5", "8–16 GB RAM", "512 GB SSD", "3-year warranty"],
-    applications: "Office workstations, billing counters, reception desks",
-    brands: ["HP", "Dell", "Lenovo", "Acer"],
+    name: "Desktop Computers",
+    specs: [
+      "Intel Core i3 / i5 / i7",
+      "AMD Ryzen options",
+      "8–32 GB RAM",
+      "SSD & HDD storage",
+    ],
+    applications: "Office work, home use, education, business",
+    brands: ["HP", "Dell", "Lenovo", "Acer", "Custom Build"],
     image: computerImage,
   },
   {
-    id: "gaming-desktop",
+    id: "assembled-desktop",
     category: "Desktop",
-    name: "Gaming / Creator PC",
-    specs: ["Intel Core i7 / Ryzen 7", "16–32 GB RAM", "RTX-series GPU", "1 TB NVMe SSD"],
-    applications: "Gaming, video editing, 3D rendering, streaming",
-    brands: ["Custom Build", "MSI", "ASUS"],
+    name: "Assembled Desktop PCs",
+    specs: [
+      "Custom configurations",
+      "Intel & AMD processors",
+      "Upgradeable components",
+      "SSD / HDD options",
+    ],
+    applications: "Gaming, office, editing, custom requirements",
+    brands: ["Custom Build"],
     image: computerImage,
   },
   {
     id: "laptop",
     category: "Laptop",
     name: "Business & Student Laptops",
-    specs: ["Intel / AMD / M-series options", "8–16 GB RAM", "256 GB–1 TB SSD", "Full-HD display"],
-    applications: "Remote work, college, field staff, travel",
-    brands: ["HP", "Dell", "Lenovo", "Apple", "Acer"],
+    specs: [
+      "Intel / AMD processors",
+      "8–16 GB RAM",
+      "256 GB–1 TB SSD",
+      "Full HD display",
+    ],
+    applications: "Work, education, travel, remote office",
+    brands: ["HP", "Dell", "Lenovo", "Acer", "ASUS"],
     image: laptopImage,
   },
   {
     id: "laser-printer",
     category: "Printer",
-    name: "Laser Printer / MFP",
-    specs: ["Mono & colour options", "Network + WiFi printing", "Duplex printing"],
-    applications: "Offices, print shops, schools",
+    name: "Laser Printers & MFPs",
+    specs: [
+      "Mono & Colour models",
+      "Network & Wi-Fi printing",
+      "Duplex printing",
+    ],
+    applications: "Offices, schools, businesses",
     brands: ["HP", "Canon", "Brother"],
     image: printerImage,
   },
   {
     id: "ink-tank-printer",
     category: "Printer",
-    name: "Ink Tank Printer",
-    specs: ["High-volume printing", "Low cost per page", "Scan & copy"],
-    applications: "Shops, small offices, high-volume home use",
+    name: "Ink Tank Printers",
+    specs: ["High-volume printing", "Low printing cost", "Scan & Copy"],
+    applications: "Home, shops, offices",
     brands: ["Epson", "Canon", "HP"],
     image: printerImage,
   },
   {
     id: "cctv-camera",
     category: "CCTV",
-    name: "AI Dome / Bullet Camera",
-    specs: ["2MP–8MP resolution", "Night vision", "Motion & AI detection"],
-    applications: "Shops, homes, factories, warehouses",
-    brands: ["CP Plus", "Hikvision", "Dahua"],
-    image: cctvImage,
-  },
-  {
-    id: "nvr-dvr",
-    category: "CCTV",
-    name: "NVR / DVR Recorder",
-    specs: ["4–32 channel options", "Mobile app viewing", "1–8 TB storage"],
-    applications: "Central recording for camera networks",
+    name: "CCTV Surveillance Systems",
+    specs: [
+      "2MP–8MP cameras",
+      "Night vision",
+      "AI motion detection",
+      "Remote mobile viewing",
+    ],
+    applications: "Homes, shops, offices, warehouses",
     brands: ["CP Plus", "Hikvision", "Dahua"],
     image: cctvImage,
   },
   {
     id: "ups",
-    category: "UPS",
-    name: "Line-Interactive / Online UPS",
-    specs: ["600 VA – 3 KVA options", "Sealed lead-acid / lithium battery", "Surge protection"],
-    applications: "PC backup, server rooms, billing counters",
+    category: "UPS & Batteries",
+    name: "UPS Systems",
+    specs: ["600 VA – 5 KVA", "Online & Line-Interactive", "Surge protection"],
+    applications: "PCs, offices, billing counters, servers",
     brands: ["APC", "Luminous", "Microtek"],
     image: upsImage,
   },
   {
-    id: "network-switch",
-    category: "Networking",
-    name: "Managed / Unmanaged Switch",
-    specs: ["8–48 port options", "Gigabit ports", "PoE variants available"],
-    applications: "Office LAN, CCTV networks, server rooms",
-    brands: ["TP-Link", "Cisco", "D-Link"],
-    image: networkingImage,
+    id: "battery",
+    category: "UPS & Batteries",
+    name: "UPS Batteries",
+    specs: [
+      "Sealed Lead Acid",
+      "Tubular batteries",
+      "Long backup",
+      "Maintenance-free options",
+    ],
+    applications: "UPS replacement, inverter backup, office power",
+    brands: ["Exide", "Amaron", "Luminous"],
+    image: upsImage,
   },
   {
-    id: "router-firewall",
-    category: "Networking",
-    name: "Router / Firewall Appliance",
-    specs: ["Dual-WAN options", "VPN support", "Content & access control"],
-    applications: "Branch offices, multi-floor buildings",
-    brands: ["TP-Link", "Fortinet", "MikroTik"],
-    image: networkingImage,
-  },
-  {
-    id: "server-rack",
-    category: "Server",
-    name: "Tower / Rack Server",
-    specs: ["Xeon processors", "16–128 GB RAM", "RAID storage"],
-    applications: "File servers, ERP hosting, backup servers",
-    brands: ["Dell", "HPE", "Lenovo"],
-    image: serverImage,
-  },
-  {
-    id: "components",
-    category: "Components",
-    name: "SSD, RAM, Motherboard, CPU, GPU",
-    specs: ["NVMe & SATA SSD", "DDR4 / DDR5 RAM", "ATX / mATX boards"],
-    applications: "Upgrades, custom builds, replacements",
-    brands: ["Samsung", "Western Digital", "Kingston", "ASUS", "Gigabyte"],
-    image: componentsImage,
+    id: "smart-home",
+    category: "Smart Home",
+    name: "Smart Home Solutions",
+    specs: [
+      "Smart Wi-Fi devices",
+      "Video door phones",
+      "Smart locks",
+      "Home automation",
+    ],
+    applications: "Home security, automation, remote monitoring",
+    brands: ["CP Plus", "Hikvision", "Godrej", "Qubo"],
+    image: smartHomeImage,
   },
 ];
 
 export const industries = [
-  { name: "Retail & Shops", note: "Billing PCs, CCTV and UPS backup for uninterrupted counters." },
-  { name: "Schools & Colleges", note: "Computer labs, projectors and campus WiFi." },
-  { name: "Textile & Manufacturing", note: "Factory-floor CCTV, networking and server backup." },
-  { name: "Healthcare Clinics", note: "Reception systems, biometric access and data backup." },
-  { name: "Offices & Co-working", note: "Structured cabling, enterprise WiFi and server setup." },
-  { name: "Homes", note: "Home automation, smart security and Wi-Fi coverage." },
+  {
+    name: "Retail & Shops",
+    note: "Billing PCs, CCTV and UPS backup for uninterrupted counters.",
+  },
+  {
+    name: "Schools & Colleges",
+    note: "Computer labs, projectors and campus WiFi.",
+  },
+  {
+    name: "Textile & Manufacturing",
+    note: "Factory-floor CCTV, networking and server backup.",
+  },
+  {
+    name: "Healthcare Clinics",
+    note: "Reception systems, biometric access and data backup.",
+  },
+  {
+    name: "Offices & Co-working",
+    note: "Structured cabling, enterprise WiFi and server setup.",
+  },
+  {
+    name: "Homes",
+    note: "Home automation, smart security and Wi-Fi coverage.",
+  },
 ];
 
 export const stats = [
-  { value: 12, suffix: "+", label: "Years serving Pollachi" },
+  { value: 11, suffix: "+", label: "Years serving Pollachi" },
   { value: 4000, suffix: "+", label: "Installations completed" },
   { value: 25, suffix: "+", label: "Brands supported" },
-  { value: 98, suffix: "%", label: "AMC renewal rate" },
+  // { value: 98, suffix: "%", label: "AMC renewal rate" },
 ];
 
 export const testimonials = [
@@ -257,6 +310,20 @@ export const faqs = [
 ];
 
 export const brands = [
-  "HP", "Dell", "Lenovo", "Acer", "Apple", "Asus", "Canon", "Epson", "Brother",
-  "CP Plus", "Hikvision", "APC", "TP-Link", "Cisco", "Fortinet", "Samsung",
+  "HP",
+  "Dell",
+  "Lenovo",
+  "Acer",
+  "Apple",
+  "Asus",
+  "Canon",
+  "Epson",
+  "Brother",
+  "CP Plus",
+  "Hikvision",
+  "APC",
+  "TP-Link",
+  "Cisco",
+  "Fortinet",
+  "Samsung",
 ];

@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <SEO
         title="COMPU CONNECT | Computer Sales, Service & IT Solutions in Pollachi"
-        description="Pollachi's trusted IT partner for computer & laptop sales, repair, CCTV security, networking, servers and home automation."
+        description="Pollachi's trusted IT partner for computer, laptop sales & service, repair, CCTV security, networking, servers and home automation."
         path="/"
       />
       <Hero />

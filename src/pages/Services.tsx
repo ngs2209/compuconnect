@@ -11,7 +11,7 @@ export default function Services() {
     <>
       <SEO
         title="Services | Repair, CCTV, Networking, AMC & Automation — COMPU CONNECT"
-        description="COMPU CONNECT offers computer sales, repair & AMC, CCTV installation, networking & servers, and smart automation for homes and businesses in Pollachi."
+        description="COMPU CONNECT offers computer sales, UPS & Battery, CCTV installation, networking & servers, and smart automation for homes and businesses in Pollachi."
         path="/services"
       />
       <section className="bg-grid pt-32 pb-16">
