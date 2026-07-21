@@ -1,10 +1,12 @@
-import computerImage from "../assets/product-computer.svg";
-import laptopImage from "../assets/product-laptop.svg";
-import printerImage from "../assets/product-printer.svg";
-import cctvImage from "../assets/product-cctv.svg";
-import smartHomeImage from "../assets/product-networking.svg";
-import upsImage from "../assets/product-ups.svg";
+
+import laptopImage from "../assets/product/product-2.png";
+import systemImage from "../assets/product/product-1.png";
+import printerImage from "../assets/product/product-3.png";
+import cctvImage from "../assets/product/product-4.png";
+import smartHomeImage from "../assets/product/product-6.png";
+import upsImage from "../assets/product/product-5.png";
 /*import serverImage from "../assets/product-server.svg";
+import computerImage from "../assets/product/product-2.png";
 import componentsImage from "../assets/product-components.svg";*/
 
 export const company = {
@@ -38,71 +40,81 @@ export type ServiceNode = {
 
 export const serviceNodes: ServiceNode[] = [
   {
-    id: "sales",
-    label: "Computer, Laptop Sales & Service",
+    id: "desktop-pc",
+    label: "Desktop PC's",
     short: "Business PCs, assembled desktops & accessories",
     description:
-      "New desktops, laptops, assembled desktop PCs, and computer accessories sourced from authorised distributors, configured to meet your requirements before delivery.",
+      "New desktop computers, assembled PCs, and computer accessories sourced from authorised distributors, configured to meet your requirements before delivery.",
     bullets: [
       "Business PCs",
       "Assembled desktops",
+      "Custom configurations",
       "Computer accessories",
-      "Premium brands",
     ],
   },
   {
-    id: "service",
-    label: "UPS & Battery",
-    short: "UPS installation, battery replacement and power backup solutions",
+    id: "laptops",
+    label: "Laptops",
+    short: "Business and personal laptops from leading brands",
     description:
-      "Reliable UPS installation, battery replacement, maintenance, and power backup solutions for homes and businesses, ensuring uninterrupted operations during power outages.",
+      "We supply laptops from trusted brands for home, business, and educational use, with configuration, software installation, and ready-to-use delivery.",
     bullets: [
-      "UPS installation",
-      "Battery replacement",
-      "UPS maintenance",
-      "Power backup solutions",
+      "Business laptops",
+      "Premium brands",
+      "Software installation",
+      "Warranty support",
+    ],
+  },
+  {
+    id: "printers",
+    label: "Printers",
+    short: "Printers, scanners & office printing solutions",
+    description:
+      "Sales, installation, and support for inkjet, laser, and multifunction printers suitable for homes, offices, and commercial environments.",
+    bullets: [
+      "Laser printers",
+      "Inkjet printers",
+      "Multifunction devices",
+      "Installation & support",
     ],
   },
   {
     id: "cctv",
-    label: "CCTV & Security",
+    label: "CCTV",
     short: "AI surveillance with remote monitoring",
     description:
-      "Camera surveys, installation and configuration for homes, shops and factories, with remote viewing set up on your phone before we leave site.",
-    bullets: ["AI surveillance", "Remote monitoring", "Installation"],
-  },
-  {
-    id: "networking",
-    label: "Networking & Servers",
-    short: "Enterprise WiFi, firewalls & server rooms",
-    description:
-      "Structured cabling, enterprise WiFi, firewall configuration and server setup for growing offices that need a network they can trust.",
+      "Professional CCTV installation and configuration for homes, shops, offices, and factories with remote viewing and smart security features.",
     bullets: [
-      "Enterprise WiFi",
-      "Firewall",
-      "Server setup",
-      "Cloud integration",
+      "AI surveillance",
+      "Remote monitoring",
+      "Professional installation",
+      "Mobile access",
     ],
   },
   {
-    id: "automation",
-    label: "Smart Office & Home",
-    short: "IoT, biometric access & automation",
-    description:
-      "Biometric attendance, smart access control and connected automation that brings your home or office up to date, wired in cleanly by our own team.",
-    bullets: ["IoT", "Smart security", "Biometric", "Access control"],
-  },
-  {
-    id: "automation",
+    id: "ups",
     label: "UPS & Batteries",
     short: "Reliable power backup solutions for home & business",
     description:
-      "We supply, install, and maintain UPS systems and batteries for homes, offices, and businesses, ensuring uninterrupted power and dependable backup during outages.",
+      "We supply, install, and maintain UPS systems and batteries for homes, offices, and businesses, ensuring uninterrupted power during outages.",
     bullets: [
       "UPS sales",
       "Battery replacement",
       "UPS installation",
       "Maintenance & support",
+    ],
+  },
+  {
+    id: "smart-home-office",
+    label: "Smart Home & Office",
+    short: "IoT, biometric access & automation",
+    description:
+      "Smart automation solutions including biometric attendance, access control, IoT devices, and connected security systems for homes and offices.",
+    bullets: [
+      "IoT automation",
+      "Smart security",
+      "Biometric access",
+      "Access control",
     ],
   },
 ];
@@ -119,104 +131,74 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: "business-desktop",
-    category: "Desktop",
-    name: "Desktop Computers",
+    id: "desktop-pc",
+    category: "Desktop PC's",
+    name: "Desktop PCs",
     specs: [
-      "Intel Core i3 / i5 / i7",
-      "AMD Ryzen options",
-      "8–32 GB RAM",
-      "SSD & HDD storage",
+      "Branded & Assembled Systems",
+      "Intel Core i3 / i5 / i7 / Ultra",
+      "AMD Ryzen Processors",
+      "8 GB–64 GB RAM",
+      "SSD & HDD Storage Options",
     ],
-    applications: "Office work, home use, education, business",
+    applications: "Office work, home use, education, business, gaming, workstations",
     brands: ["HP", "Dell", "Lenovo", "Acer", "Custom Build"],
-    image: computerImage,
+    image: systemImage,
   },
   {
-    id: "assembled-desktop",
-    category: "Desktop",
-    name: "Assembled Desktop PCs",
+    id: "laptops",
+    category: "Laptops",
+    name: "Business & Personal Laptops",
     specs: [
-      "Custom configurations",
-      "Intel & AMD processors",
-      "Upgradeable components",
-      "SSD / HDD options",
+      "Intel & AMD Processors",
+      "8 GB–32 GB RAM",
+      "256 GB–2 TB SSD",
+      "Full HD & IPS Displays",
     ],
-    applications: "Gaming, office, editing, custom requirements",
-    brands: ["Custom Build"],
-    image: computerImage,
-  },
-  {
-    id: "laptop",
-    category: "Laptop",
-    name: "Business & Student Laptops",
-    specs: [
-      "Intel / AMD processors",
-      "8–16 GB RAM",
-      "256 GB–1 TB SSD",
-      "Full HD display",
-    ],
-    applications: "Work, education, travel, remote office",
+    applications: "Business, education instutions, work from home, travel",
     brands: ["HP", "Dell", "Lenovo", "Acer", "ASUS"],
     image: laptopImage,
   },
   {
-    id: "laser-printer",
+    id: "printers",
     category: "Printer",
-    name: "Laser Printers & MFPs",
+    name: "Printers",
     specs: [
-      "Mono & Colour models",
-      "Network & Wi-Fi printing",
-      "Duplex printing",
+      "Laser & Ink Tank Models",
+      "Print, Scan & Copy",
+      "Wi-Fi & Network Support",
+      "Automatic Duplex Printing",
     ],
-    applications: "Offices, schools, businesses",
-    brands: ["HP", "Canon", "Brother"],
+    applications: "Homes, offices, schools, retail shops, businesses",
+    brands: ["HP", "Canon", "Brother", "Epson"],
     image: printerImage,
   },
   {
-    id: "ink-tank-printer",
-    category: "Printer",
-    name: "Ink Tank Printers",
-    specs: ["High-volume printing", "Low printing cost", "Scan & Copy"],
-    applications: "Home, shops, offices",
-    brands: ["Epson", "Canon", "HP"],
-    image: printerImage,
-  },
-  {
-    id: "cctv-camera",
+    id: "cctv",
     category: "CCTV",
     name: "CCTV Surveillance Systems",
     specs: [
-      "2MP–8MP cameras",
-      "Night vision",
-      "AI motion detection",
-      "Remote mobile viewing",
+      "2MP–8MP HD Cameras",
+      "Night Vision",
+      "AI Motion Detection",
+      "Remote Mobile Viewing",
     ],
-    applications: "Homes, shops, offices, warehouses",
+    applications: "Homes, shops, offices, factories, warehouses",
     brands: ["CP Plus", "Hikvision", "Dahua"],
     image: cctvImage,
   },
   {
-    id: "ups",
+    id: "ups-batteries",
     category: "UPS & Batteries",
-    name: "UPS Systems",
-    specs: ["600 VA – 5 KVA", "Online & Line-Interactive", "Surge protection"],
-    applications: "PCs, offices, billing counters, servers",
-    brands: ["APC", "Luminous", "Microtek"],
-    image: upsImage,
-  },
-  {
-    id: "battery",
-    category: "UPS & Batteries",
-    name: "UPS Batteries",
+    name: "UPS & Batteries",
     specs: [
-      "Sealed Lead Acid",
-      "Tubular batteries",
-      "Long backup",
-      "Maintenance-free options",
+      "600 VA–5 KVA UPS",
+      "Online & Line-Interactive UPS",
+      "Sealed Lead Acid & Tubular Batteries",
+      "Reliable Power Backup",
     ],
-    applications: "UPS replacement, inverter backup, office power",
-    brands: ["Exide", "Amaron", "Luminous"],
+    applications: "PCs, offices, billing counters, servers, inverter backup",
+    brands: ["APC", "Luminous", "Microtek", "Exide", "Amaron"],
     image: upsImage,
   },
   {
@@ -224,12 +206,12 @@ export const products: Product[] = [
     category: "Smart Home",
     name: "Smart Home Solutions",
     specs: [
-      "Smart Wi-Fi devices",
-      "Video door phones",
-      "Smart locks",
-      "Home automation",
+      "Smart Wi-Fi Devices",
+      "Video Door Phones",
+      "Smart Locks",
+      "Biometric Access & Automation",
     ],
-    applications: "Home security, automation, remote monitoring",
+    applications: "Home security, office automation, access control, remote monitoring",
     brands: ["CP Plus", "Hikvision", "Godrej", "Qubo"],
     image: smartHomeImage,
   },
@@ -238,27 +220,27 @@ export const products: Product[] = [
 export const industries = [
   {
     name: "Retail & Shops",
-    note: "Billing PCs, CCTV and UPS backup for uninterrupted counters.",
+    note: "Desktop PCs, billing systems, printers, CCTV and UPS backup for smooth daily operations.",
   },
   {
     name: "Schools & Colleges",
-    note: "Computer labs, projectors and campus WiFi.",
+    note: "Computer labs, laptops, printers, CCTV surveillance and campus-wide networking solutions.",
   },
   {
-    name: "Textile & Manufacturing",
-    note: "Factory-floor CCTV, networking and server backup.",
+    name: "Corporate Offices",
+    note: "Desktop PCs, laptops, printers, networking, UPS systems and smart office automation.",
   },
   {
-    name: "Healthcare Clinics",
-    note: "Reception systems, biometric access and data backup.",
+    name: "Healthcare & Clinics",
+    note: "Reception systems, printers, CCTV security, UPS backup and biometric access control.",
   },
   {
-    name: "Offices & Co-working",
-    note: "Structured cabling, enterprise WiFi and server setup.",
+    name: "Manufacturing & Industries",
+    note: "Factory surveillance, networking, server infrastructure, UPS backup and access control systems.",
   },
   {
-    name: "Homes",
-    note: "Home automation, smart security and Wi-Fi coverage.",
+    name: "Homes & Apartments",
+    note: "Desktop PCs, laptops, smart home automation, CCTV security, Wi-Fi coverage and UPS solutions.",
   },
 ];
 
@@ -292,38 +274,47 @@ export const testimonials = [
 
 export const faqs = [
   {
-    q: "Do you provide on-site service in Pollachi and nearby villages?",
-    a: "Yes. Our technicians visit homes, shops and offices across Pollachi, Kovilpalayam and surrounding areas for installation, repair and AMC visits.",
+    q: "Do you provide on-site installation and support?",
+    a: "Yes. Our technicians provide on-site installation, configuration, maintenance and repair services for homes, offices, schools and businesses in Pollachi and nearby areas.",
   },
   {
-    q: "What is included in an Annual Maintenance Contract (AMC)?",
-    a: "Scheduled preventive visits, priority breakdown support, discounted spares and free minor software support for the covered devices, for one year.",
+    q: "What products do you supply?",
+    a: "We supply Desktop PCs, Laptops, Printers, CCTV surveillance systems, UPS & Batteries, and Smart Home & Office automation solutions from leading brands.",
   },
   {
-    q: "Can I get a quotation without visiting the shop?",
-    a: "Yes — send your requirement over WhatsApp or the quote form on this site and we'll reply with pricing and options the same day.",
+    q: "Do you offer custom-built desktop computers?",
+    a: "Yes. We build custom desktop PCs tailored for office work, business applications, gaming, graphic design and other performance requirements using quality components.",
   },
   {
-    q: "Do you sell only new hardware or also handle upgrades and repairs?",
-    a: "Both. We sell new PCs, laptops and networking gear, and also repair, upgrade and service existing hardware from any brand.",
+    q: "Can I get a quotation before purchasing?",
+    a: "Absolutely. Share your requirements through WhatsApp, phone or the enquiry form on our website, and we'll provide a detailed quotation with suitable product options.",
+  },
+  {
+    q: "Do you provide warranty and after-sales support?",
+    a: "Yes. All products come with the manufacturer's warranty where applicable, along with installation assistance and reliable after-sales service from our technical team.",
+  },
+  {
+    q: "Do you install CCTV systems with mobile viewing?",
+    a: "Yes. We install and configure CCTV systems with remote mobile access, allowing you to monitor your home or business securely from anywhere.",
   },
 ];
-
 export const brands = [
   "HP",
   "Dell",
   "Lenovo",
   "Acer",
-  "Apple",
-  "Asus",
+  "ASUS",
   "Canon",
   "Epson",
   "Brother",
   "CP Plus",
   "Hikvision",
+  "Dahua",
   "APC",
-  "TP-Link",
-  "Cisco",
-  "Fortinet",
-  "Samsung",
+  "Luminous",
+  "Microtek",
+  "Exide",
+  "Amaron",
+  "Godrej",
+  "Qubo",
 ];

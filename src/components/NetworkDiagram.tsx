@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
 import { serviceNodes } from "../data/content";
-import { Shield, Laptop, Wrench, Camera, Network, Home } from "lucide-react";
+import { Shield, Monitor , Laptop, Printer, Cctv, BatteryCharging, MonitorSmartphone } from "lucide-react";
 
 // Fixed positions around a circle for 5 service nodes, centre = COMPU CONNECT
 const RADIUS = 190;
 const CENTER = { x: 260, y: 260 };
 
 const serviceIcons = {
-  sales: Laptop,
-  service: Wrench,
-  cctv: Camera,
-  networking: Network,
-  automation: Home,
+  "desktop-pc": Monitor,
+  laptops: Laptop,
+  printers: Printer,
+  cctv: Cctv,
+  ups: BatteryCharging,
+  "smart-home-office": MonitorSmartphone,
 };
 
 function nodePosition(index: number, total: number) {
@@ -149,7 +150,7 @@ export default function NetworkDiagram() {
         {/* service nodes */}
         {serviceNodes.map((node, i) => {
           const p = nodePosition(i, serviceNodes.length);
-          const Icon = serviceIcons[node.id as keyof typeof serviceIcons];
+          const Icon = serviceIcons[node.id as keyof typeof serviceIcons] || Shield;
           return (
             <g key={node.id}>
               <motion.circle
